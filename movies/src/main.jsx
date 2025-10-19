@@ -1,6 +1,14 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import HomePage from "./pages/HomePage";
+import MovieDetailsPage from './pages/movieDetailsPage'
+
+const images = [
+  "/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+  "/v1QQKq8M0fWxMgSdGOX1aCv8qMB.jpg",
+  "/2iGN0aKHJYD0xQydlfuCUAcgNbO.jpg",
+  "/rjBwhsOzHKUw2NIOrE7aMqjfe6s.jpg",
+]
 
 
 const sample = {
@@ -31,6 +39,8 @@ const sample = {
       name: "Action",
     },
   ],
+
+  
   HomePage:
     "https://www.starwars.com/films/star-wars-episode-viii-the-last-jedi",
   id: 181808,
@@ -88,9 +98,10 @@ const movies = [sample, sample, sample, sample, sample, sample, sample];
 
 const App = () => {
   return (
-      <HomePage movies={movies} />
-  );
+      <MovieDetailsPage movie={sample} images={images} />
+      );
 };
+
 
 const rootElement = createRoot( document.getElementById("root") )
 rootElement.render(<App />);
